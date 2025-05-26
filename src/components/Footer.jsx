@@ -56,12 +56,12 @@ const Footer = () => {
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <a href={`/algemeen`}>Algemene voorwaarden</a>
+                  <a href={`/algemeene-voorwaarden`}>Algemene voorwaarden</a>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <a href={`/privacy`}>Privacyverklaring</a>
+                  <a href={`/Rechtsverhouding`}>Privacyverklaring</a>
                 </li>
               </ul>
             </div>
