@@ -3,9 +3,6 @@ import s from "../styles/components/footer.module.scss";
 import logo from "../images/logo.svg";
 import berg from "../images/berg.jpg";
 import { Link } from "react-router-dom";
-import CV from "../pdf/CV-Frank-van-Woesik.pdf";
-import Privacy from "../pdf/Rechtsverhouding-DNR2011-juli2013-NED.pdf";
-import Algemeen from "../pdf/Algemene-leverings-en-betalingsvoorwaarden-VWC.pdf";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
@@ -54,17 +51,17 @@ const Footer = () => {
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <a href={`pdf/cv`}>Frank van Woesik CV</a>
+                  <a href={`/cv`}>Frank van Woesik CV</a>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <a href={`pdf/algemeen`}>Algemene voorwaarden</a>
+                  <a href={`/algemeen`}>Algemene voorwaarden</a>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <a href={`pdf/privacy`}>Privacyverklaring</a>
+                  <a href={`/privacy`}>Privacyverklaring</a>
                 </li>
               </ul>
             </div>
