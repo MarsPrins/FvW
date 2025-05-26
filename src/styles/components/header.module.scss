@@ -1,0 +1,30 @@
+@import "../global.scss";
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1300px;
+  padding: 0 2rem;
+  width: 100%;
+  z-index: 999;
+
+  @include minSizeWH(1330px, 0) {
+    padding: 0;
+  }
+  .logo {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 50px;
+      background: #ffff;
+      border-radius: 50%;
+      padding: 1rem;
+      width: 100px;
+      height: 100px;
+      box-shadow: 0 10px 15px $slighterShadow;
+    }
+  }
+}

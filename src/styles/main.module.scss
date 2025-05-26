@@ -1,0 +1,1555 @@
+@import "./global.scss";
+
+// check welke browsers problemen hebbne met flex en test ze
+// flex zit ook op footer en header
+
+.main {
+  // .one1 {
+  //   position: absolute;
+  //   bottom: -1rem;
+  //   right: 0.5rem;
+  //   width: 25%;
+  //   height: 10px;
+  //   background: #b24918;
+  //   border-radius: 5px;
+  // }
+  // .one {
+  //   position: absolute;
+  //   top: -1rem;
+  //   left: 0.5rem;
+  //   width: 25%;
+  //   height: 10px;
+  //   background: #fda67e;
+  //   border-radius: 5px;
+  // }
+  .leftDetail {
+    position: absolute;
+    left: 0.5rem;
+    height: 10px;
+    border-radius: 5px;
+    &:nth-child(1) {
+      top: -1rem;
+      width: 25%;
+      background: red;
+    }
+    &:nth-child(2) {
+      top: -2rem;
+      width: 12%;
+      background: red;
+    }
+    &:nth-child(3) {
+      top: -3rem;
+      width: 6%;
+      background: red;
+    }
+    &:nth-child(4) {
+      top: -4rem;
+      width: 3%;
+      background: red;
+    }
+  }
+  .rightDetail {
+    position: absolute;
+    right: 0.5rem;
+    height: 10px;
+    border-radius: 5px;
+    &:nth-child(1) {
+      bottom: -1rem;
+      width: 25%;
+      background: blue;
+    }
+    &:nth-child(2) {
+      bottom: -2rem;
+      width: 12%;
+      background: blue;
+    }
+    &:nth-child(3) {
+      bottom: -3rem;
+      width: 6%;
+      background: blue;
+    }
+    &:nth-child(4) {
+      bottom: -4rem;
+      width: 3%;
+      background: blue;
+    }
+  }
+  a {
+    transition: 0.2s;
+    &:hover {
+      color: $fourthColor;
+      text-decoration: none;
+    }
+  }
+  .landing {
+    // display: flex;
+    // flex-direction: column;
+    max-height: 750px;
+    min-height: 550px;
+
+    .transp {
+      height: 70lvh;
+      position: relative;
+      max-height: 750px;
+      min-height: 550px;
+
+      @include minSizeWH(0px, 700px) {
+        height: 80lvh;
+      }
+      .fixedImage {
+        background-image: url("../images/berg.jpg"); // update path as needed
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top center;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        position: absolute;
+        max-height: 750px;
+        min-height: 550px;
+
+        @include minSizeWH(700px, 0) {
+          background-attachment: fixed; // makes it "fixed" while scrolling
+        }
+        @include minSizeWH(1050px, 0) {
+          animation: zoomSmaller 5s ease forwards;
+        }
+        @include minSizeWH(1350px, 0) {
+          animation: zoom 5s ease forwards;
+        }
+        @keyframes zoomSmaller {
+          0% {
+            background-size: 150%;
+          }
+          100% {
+            background-size: 130%;
+          }
+        }
+        @keyframes zoom {
+          0% {
+            background-size: 120%;
+          }
+          100% {
+            background-size: 100%;
+          }
+        }
+
+        .overlay {
+          // background: linear-gradient(
+          //   to top right,
+          //   $fourthColor 0%,
+          //   $fourthColor 10%,
+          //   #98350300 80%,
+          //   #98350300 100%
+          // );
+          // background: radial-gradient(
+          //   at -30% 90%,
+          //   $fourthColor 0%,
+          //   $fourthColor 30%,
+          //   #98350300 40%
+          // );
+
+          height: 80lvh;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          opacity: 1;
+          max-height: 750px;
+          min-height: 550px;
+        }
+        // img {
+        //   width: 100vw;
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   height: 100lvh;
+        //   z-index: -2;
+        //   object-fit: cover;
+        // }
+      }
+      .info {
+        padding-top: 150px;
+
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 1300px;
+        margin: auto;
+        @include minSizeWH(600px, 0) {
+          padding-top: 50px;
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          padding: 2rem;
+          flex-shrink: 0;
+          justify-content: space-between;
+          // height: 60%;
+          // position: absolute;
+          // bottom: 3rem;
+          @include minSizeWH(600px, 500px) {
+            max-width: 80%;
+          }
+
+          @include minSizeWH(1100px, 0) {
+            max-width: 60%;
+          }
+          @include minSizeWH(1280px, 0) {
+            max-width: 60%;
+          }
+          @include minSizeWH(1330px, 0) {
+            padding: 0rem;
+          }
+
+          .top {
+            @include minSizeWH(700px, 0) {
+              padding-bottom: 2rem;
+            }
+          }
+          .bottom {
+            .desktop {
+              display: none;
+            }
+            .mobiel {
+              display: block;
+            }
+            @include minSizeWH(700px, 0) {
+              .desktop {
+                display: block;
+              }
+              .mobiel {
+                display: none;
+              }
+            }
+          }
+
+          h1 {
+            font-size: 45px;
+            color: $txtWhite;
+            font-family: $regularFont;
+            font-weight: 600;
+            line-height: 1.5ch;
+            text-shadow: 0 0 10px $slightShadow;
+            @include minSizeWH(500px, 0) {
+              font-size: 55px;
+            }
+            @include minSizeWH(700px, 800px) {
+              margin-bottom: 1rem;
+              font-size: 60px;
+            }
+            @include minSizeWH(1000px, 700px) {
+              font-size: 90px;
+            }
+          }
+          span {
+            color: #ffffff;
+            font-size: 16px;
+            font-family: $secondFont;
+            text-shadow: 0 0 5px #000000;
+            width: 100%;
+            font-weight: 400;
+            letter-spacing: 3px;
+            position: relative;
+            bottom: 0.5rem;
+            display: none;
+            @include minSizeWH(700px, 0) {
+              display: block;
+              text-shadow: 0 0 5px #000000a1;
+            }
+          }
+          p {
+            color: $txtWhite;
+            font-family: $regularFont;
+            font-weight: 400;
+            margin-top: 0.5rem;
+            font-size: 20px;
+            text-shadow: 0 0 5px #000000;
+
+            @include minSizeWH(700px, 800px) {
+              font-size: 25px;
+              max-width: 70%;
+              text-shadow: 0 0 5px #0000008c;
+            }
+          }
+          .button {
+            z-index: 2;
+            position: absolute;
+            left: 2rem;
+            bottom: -1.5rem;
+            width: calc(100% - 4rem);
+            @include minSizeWH(700px, 0px) {
+              width: 250px;
+              position: relative;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+    .white {
+      //   height: 1000px;
+      background: $mainColor;
+    }
+  }
+  .diensten {
+    background: $mainColor;
+    position: relative;
+    padding: 100px 0;
+
+    .leftDetail {
+      display: none;
+      &:nth-child(1) {
+        background: #fda67e;
+      }
+      &:nth-child(2) {
+        background: #ffb998;
+      }
+      &:nth-child(3) {
+        background: #ffcfb9;
+      }
+      @include minSizeWH(1000px, 0) {
+        display: block;
+      }
+    }
+    .rightDetail {
+      display: none;
+      &:nth-child(1) {
+        background: #b24918;
+      }
+      &:nth-child(2) {
+        background: #89360f;
+      }
+      &:nth-child(3) {
+        background: #5d2308;
+      }
+      @include minSizeWH(1000px, 0) {
+        display: block;
+      }
+    }
+
+    .heading {
+      max-width: 1300px;
+      text-align: left;
+      display: flex;
+      margin: auto;
+      flex-direction: column;
+      justify-content: space-between;
+      @include minSizeWH(1200px, 0) {
+        flex-direction: none;
+      }
+      .container {
+        padding-left: 2rem;
+        align-self: start;
+
+        .title {
+          // margin: auto;
+          position: relative;
+          width: fit-content;
+          margin: 2rem 2rem 2rem;
+          .graphic {
+            position: absolute;
+            left: -2rem;
+            bottom: 0.5rem;
+            width: 10px;
+            height: 80%;
+            background: $secondaryColor;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
+          h2 {
+            font-size: 30px;
+            font-weight: 600;
+            font-family: $regularFont;
+            @include minSizeWH(1000px, 600px) {
+              font-size: 45px;
+            }
+          }
+        }
+        .txt {
+          font-family: $secondFont;
+          font-size: 20px;
+          font-weight: 300;
+          max-width: 500px;
+          @include minSizeWH(700px, 0) {
+            max-width: 690px;
+          }
+        }
+        .txtAndere {
+          display: block;
+          font-size: 18px;
+          padding-right: 0.5rem;
+
+          @include minSizeWH(1100px, 0) {
+            display: none;
+          }
+        }
+        .txtDesktop {
+          display: none;
+          @include minSizeWH(1100px, 0) {
+            display: block;
+          }
+        }
+      }
+      .listBox {
+        width: 100%;
+        border-radius: 20px;
+        margin-bottom: 100px;
+        align-self: end;
+        display: none;
+        @include minSizeWH(550px, 0) {
+          width: fit-content;
+          padding-right: 2rem;
+        }
+        @include minSizeWH(1100px, 0) {
+          display: block;
+          position: absolute;
+          top: -150px;
+        }
+        .header {
+          padding: 1.5rem 1.5rem 2rem;
+          display: flex;
+          flex-direction: column;
+          line-height: 1.5rem;
+          scale: 0.99;
+          // box-shadow: 0 20px 40px 20px $slightShadow;
+          position: relative;
+          top: 1rem;
+          background: $mainColor;
+          z-index: 1;
+          @include minSizeWH(550px, 0) {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+          }
+          .regularHeading {
+            font-size: 23px;
+            font-family: $regularFont;
+            font-weight: 600;
+            color: $txtBlack;
+            text-align: center;
+            @include minSizeWH(550px, 0) {
+              text-align: start;
+            }
+          }
+        }
+        .content {
+          position: relative;
+          box-shadow: 0 0px 20px 5px $slightShadow;
+          padding: 3rem 1rem 3rem 1rem;
+          z-index: 2;
+          font-family: $regularFont;
+          background: linear-gradient(
+            45deg,
+            $secondaryColor 0%,
+            $thirdColor 100%
+          );
+          text-align: center;
+          .listHeading {
+            color: $txtWhite;
+            font-weight: 500;
+            padding: 1rem 0;
+            font-size: 18px;
+          }
+          ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 1rem;
+            list-style-type: none;
+            @include minSizeWH(550px, 0) {
+              display: block;
+            }
+            li {
+              padding: 0.5rem 4rem;
+              padding-left: 3rem;
+              border-radius: 20px;
+              background: #76a3d2bd;
+              position: relative;
+              color: $txtWhite;
+              margin: 0.5rem 0;
+              width: 100%;
+              box-shadow: 0 5px 5px 0 $slighterShadow;
+              @include minSizeWH(550px, 0) {
+                width: fit-content;
+              }
+              &::before {
+                content: "";
+                height: 20px;
+                width: 20px;
+                background: $secondaryColor;
+                opacity: 0.6;
+                display: block;
+                position: absolute;
+                left: 0.8rem;
+                bottom: calc(50% - 10px);
+                border-radius: 50%;
+                box-shadow: inset 0 5px 5px 0 $slighterShadow;
+              }
+            }
+          }
+          @include minSizeWH(550px, 0) {
+            border-radius: 20px;
+            padding: 3rem 7rem 3rem 3rem;
+            text-align: start;
+          }
+          @include minSizeWH(1200px, 0) {
+            padding: 3rem 10rem 3rem 3rem;
+          }
+        }
+      }
+    }
+    .blocks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      padding: 50px 0;
+      width: 100vw;
+      position: relative;
+      @include minSizeWH(700px, 0) {
+        grid-template-columns: repeat(2, 1fr);
+        // Swap 3rd and 4th items
+        > :nth-child(3) {
+          grid-row: 2;
+          grid-column: 2;
+        }
+
+        > :nth-child(4) {
+          grid-row: 2;
+          grid-column: 1;
+        }
+      }
+      @include minSizeWH(1000px, 0) {
+        grid-template-columns: repeat(1, 1fr);
+        > :nth-child(3),
+        > :nth-child(4) {
+          grid-row: auto;
+          grid-column: auto;
+        }
+      }
+      .block {
+        position: relative;
+        margin: 2rem auto;
+        width: 90%;
+        border-radius: 20px;
+        padding: 3rem 1rem;
+        box-shadow: 0px 0px 15px 0px $slightShadow;
+        .contentWrapper {
+          //   height: 100%;
+          display: flex;
+          flex-direction: column-reverse;
+          flex-shrink: 0;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .graphicSide {
+          img {
+            height: 150px;
+            object-fit: contain;
+          }
+        }
+        .txtSide {
+          text-align: center;
+          font-family: $regularFont;
+          h3 {
+            font-size: 17px;
+            margin: 1.5rem 0 0.5rem 0;
+          }
+          p {
+            font-family: $secondFont;
+            font-weight: 300;
+            overflow: hidden;
+            transition: max-height 0.5s, padding 0.7s, opacity 0.7s;
+            // transition: 0.5s;
+            text-overflow: ellipsis;
+            line-height: 1.5rem;
+            font-size: 16px;
+            b {
+              font-weight: 500;
+            }
+          }
+          .closed {
+            max-height: 4.5rem; /* ~2 lines, adjust for font-size/line-height */
+            opacity: 0.8;
+            padding: 0;
+          }
+
+          /* When expanded */
+          .open {
+            max-height: 1000px; /* large enough to show full content */
+            opacity: 1;
+            padding: 1rem 0;
+            transition: max-height 1s, padding 0.5s, opacity 0.5s;
+          }
+
+          /* Optional: clamp text after collapse */
+          .clamped {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+          }
+          .leesMeer {
+            color: $txtBlack;
+            font-family: $secondFont;
+            font-size: 18px;
+            font-weight: 300;
+            cursor: pointer;
+            padding-top: 1rem;
+            text-decoration: none;
+            position: relative;
+            width: fit-content;
+            margin: auto;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              transform: scaleX(0);
+              height: 1px;
+              bottom: 0px;
+              left: 0;
+              background-color: $txtBlack;
+              transition: transform 0.25s ease-out;
+              transform-origin: bottom left;
+            }
+            &:hover::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+        @include minSizeWH(700px, 0) {
+          aspect-ratio: 1/1;
+          p {
+            font-size: 18px;
+          }
+        }
+        @include minSizeWH(1000px, 0) {
+          width: 100%;
+          border-radius: 0;
+          aspect-ratio: 0;
+          margin: 0;
+          box-shadow: unset;
+          border: none;
+          padding: 5rem 1rem;
+
+          .contentWrapper {
+            flex-direction: row;
+            justify-content: space-between;
+            height: 100%;
+            max-width: 1300px;
+            margin: auto;
+            align-items: start;
+
+            .txtSide {
+              width: 50%;
+              height: 100%;
+              text-align: left;
+              text-overflow: ellipsis;
+              overflow: hidden;
+              h3 {
+                margin: 0 0 0.5rem 0;
+                font-size: 35px;
+                font-weight: 600;
+              }
+              p {
+                font-size: 20px;
+                line-height: unset;
+
+                // overflow: hidden;
+              }
+              .closed {
+                max-height: 7.5rem; /* ~2 lines, adjust for font-size/line-height */
+                padding: 0;
+              }
+
+              /* When expanded */
+              .open {
+                max-height: 1000px; /* large enough to show full content */
+                padding: 1rem 0;
+              }
+
+              /* Optional: clamp text after collapse */
+              .clamped {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
+              }
+              .leesMeer {
+                margin: 0;
+              }
+            }
+          }
+          .graphicSide {
+            height: 100%;
+            max-height: 240px;
+            width: 40%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+              min-width: 100%;
+              height: 100%;
+              max-height: 240px;
+            }
+          }
+        }
+      }
+    }
+    @include minSizeWH(1000px, 0) {
+      .blocks > :nth-child(odd) {
+        height: 100%;
+        .contentWrapper {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+    .blocks > :nth-child(even) {
+      // border: solid 1px $slightShadow;
+      // height: 300px;
+
+      h3,
+      p {
+        color: $txtWhite;
+      }
+      .leesMeer {
+        color: $txtWhite !important ;
+        &::after {
+          background-color: $txtWhite !important;
+        }
+      }
+    }
+    .blocks > :nth-child(2) {
+      background: linear-gradient(-45deg, $fourthColor 0%, $fifthhColor 100%);
+    }
+    .blocks > :nth-child(4) {
+      background: linear-gradient(-155deg, $fourthColor 0%, $fifthhColor 100%);
+    }
+  }
+  .over {
+    // hier zit de x axis schending
+    background: $mainColor;
+    padding: 0 0;
+    margin-bottom: 150px;
+
+    .container {
+      max-width: 1300px;
+      margin: auto;
+      padding-left: 2rem;
+      p {
+        max-width: 90%;
+      }
+      @include minSizeWH(760px, 0) {
+        padding: 2rem, 4rem;
+      }
+      .heading {
+        position: relative;
+        width: fit-content;
+        margin-bottom: 2rem;
+        .title {
+          margin-left: 2rem;
+          .graphic {
+            position: absolute;
+            left: -2rem;
+            bottom: 0.5rem;
+            width: 10px;
+            height: 80%;
+            background: $fourthColor;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
+          position: relative;
+          .desktop {
+            display: none;
+            @include minSizeWH(500px, 0) {
+              display: block;
+            }
+          }
+        }
+        span.mobile {
+          font-family: $secondFont;
+          font-size: 18px;
+          font-weight: 300;
+          font-style: italic;
+          // position: relative;
+          // bottom: -5px;
+        }
+        .mobile {
+          display: block;
+          padding: 0;
+          line-height: 1.9ch;
+
+          @include minSizeWH(500px, 0) {
+            display: none;
+          }
+        }
+        h2 {
+          font-size: 30px;
+          font-weight: 600;
+          font-family: $regularFont;
+
+          @include minSizeWH(1000px, 600px) {
+            font-size: 45px;
+          }
+        }
+      }
+      .texts {
+        font-family: $regularFont;
+        max-width: 95%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        .dates {
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          width: fit-content;
+          .graphic {
+            display: inline-block;
+            width: 7px;
+            height: 14px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background: $fourthColor;
+          }
+          .dateNumbers {
+            display: inline-block;
+            padding-left: 0.5rem;
+          }
+        }
+        p {
+          font-family: $secondFont;
+          font-weight: 300;
+          overflow: hidden;
+          // transition: max-height 0.4s ease;
+          text-overflow: ellipsis;
+          line-height: 1.5rem;
+          transition: 0.5s ease;
+        }
+        .closed {
+          max-height: 7.5rem; /* ~2 lines, adjust for font-size/line-height */
+          opacity: 0.8;
+          padding: 0;
+        }
+
+        /* When expanded */
+        .open {
+          max-height: 1000px; /* large enough to show full content */
+          opacity: 1;
+          padding: 1rem 0;
+        }
+
+        /* Optional: clamp text after collapse */
+        .clamped {
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 5;
+        }
+        .leesMeer {
+          color: $txtBlack;
+          font-family: $secondFont;
+          font-size: 16px;
+          font-weight: 300;
+          cursor: pointer;
+          padding-top: 1rem;
+          text-decoration: none;
+          position: relative;
+          width: fit-content;
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0px;
+            left: 0;
+            background-color: $txtBlack;
+            transition: transform 0.25s ease-out;
+            transform-origin: bottom left;
+          }
+          &:hover::after {
+            transform: scaleX(1);
+          }
+        }
+        .starter {
+          position: relative;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          justify-content: space-between;
+          @include minSizeWH(450px, 0) {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          }
+          .part1 {
+            padding-bottom: 2rem;
+          }
+          .part2 {
+            padding-bottom: 2rem;
+          }
+          @include minSizeWH(828px, 0) {
+            .part1 {
+              padding-right: 1rem;
+            }
+            .part2 {
+              padding-left: 1rem;
+            }
+          }
+        }
+        .finisher {
+          a {
+            color: $fourthColor;
+            transition: 0.2s;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+          .part3 {
+            @include minSizeWH(828px, 0) {
+              text-align: center;
+              max-width: 70%;
+              margin: auto;
+              .dates {
+                position: relative;
+                left: -2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .co2Wrapper {
+    position: relative;
+    background: $mainColor;
+    margin-bottom: 150px;
+    .leftDetail {
+      display: none;
+      &:nth-child(1) {
+        background: $secondaryColor;
+        box-shadow: 0 0 15px 0 $slightShadow;
+      }
+      &:nth-child(2) {
+        background: #0666be;
+        box-shadow: 0 0 15px 0 $slightShadow;
+      }
+      &:nth-child(3) {
+        background: #238ef3;
+        box-shadow: 0 0 15px 0 $slightShadow;
+      }
+      @include minSizeWH(900px, 0) {
+        display: block;
+      }
+    }
+    .rightDetail {
+      display: none;
+      &:nth-child(1) {
+        background: #fff;
+        box-shadow: 0 0 15px 0 $slightShadow;
+      }
+      &:nth-child(2) {
+        background: #fff;
+        box-shadow: 0 0 15px 0 $slightShadow;
+      }
+      &:nth-child(3) {
+        background: #fff;
+        box-shadow: 0 0 15px 0 $slightShadow;
+      }
+      @include minSizeWH(900px, 0) {
+        display: block;
+      }
+    }
+
+    .co2 {
+      background: $mainColor;
+      position: relative;
+      .container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        @include minSizeWH(700px, 0) {
+          box-shadow: 0 0px 50px 10px $grey05;
+          border-radius: 25px;
+          width: 90%;
+          padding: 0;
+          margin: auto;
+        }
+        @include minSizeWH(900px, 0) {
+          flex-direction: row;
+          width: 100%;
+          border-radius: 0;
+        }
+        .left {
+          padding: 2rem;
+          width: 100%;
+          z-index: 2;
+          .text {
+            .heading {
+              position: relative;
+              width: fit-content;
+              margin-bottom: 2rem;
+              .title {
+                margin-left: 2rem;
+                position: relative;
+                .graphic {
+                  position: absolute;
+                  left: -2rem;
+                  // bottom: 0.5rem;
+                  width: 10px;
+                  height: 100%;
+                  background: $secondaryColor;
+                  border-top-left-radius: 10px;
+                  border-top-right-radius: 10px;
+                  @include minSizeWH(700px, 0) {
+                    background-color: $txtWhite;
+                  }
+                  @include minSizeWH(900px, 0) {
+                    height: 80%;
+                    bottom: 0.5rem;
+                  }
+                }
+                h2 {
+                  font-size: 25px;
+                  font-weight: 600;
+                  font-family: $regularFont;
+                  @include minSizeWH(400px, 0) {
+                    font-size: 30px;
+                  }
+                  @include minSizeWH(1000px, 600px) {
+                    font-size: 45px;
+                  }
+                }
+                span {
+                  font-size: 18px;
+                  font-weight: 400;
+                  font-family: $regularFont;
+                }
+              }
+            }
+            p {
+              font-family: $secondFont;
+              font-weight: 300;
+              font-size: 18px;
+              margin-bottom: 2rem;
+              b {
+                font-weight: 500;
+              }
+            }
+            p {
+              font-family: $secondFont;
+              font-weight: 300;
+              overflow: hidden;
+              transition: max-height 0.5s, padding 0.7s, opacity 0.7s;
+              // transition: 0.5s;
+              text-overflow: ellipsis;
+              font-size: 16px;
+              @include minSizeWH(700px, 0) {
+                font-size: 20px;
+              }
+              b {
+                font-weight: 500;
+              }
+            }
+            .closed {
+              max-height: 8rem; /* ~2 lines, adjust for font-size/line-height */
+              opacity: 0.8;
+              padding: 0;
+              @include minSizeWH(700px, 0) {
+                max-height: 9.5rem;
+              }
+            }
+
+            /* When expanded */
+            .open {
+              max-height: 500px; /* large enough to show full content */
+              opacity: 1;
+              padding: 1rem 0;
+              transition: max-height 1s, padding 0.5s, opacity 0.5s;
+            }
+
+            /* Optional: clamp text after collapse */
+            .clamped {
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 5;
+            }
+            .leesMeer {
+              color: $txtBlack;
+              font-family: $secondFont;
+              font-size: 18px;
+              font-weight: 300;
+              cursor: pointer;
+              text-decoration: none;
+              position: relative;
+              width: fit-content;
+              margin-bottom: 2rem;
+              &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 1px;
+                bottom: 0px;
+                left: 0;
+                background-color: $txtBlack;
+                transition: transform 0.25s ease-out;
+                transform-origin: bottom left;
+              }
+              &:hover::after {
+                transform: scaleX(1);
+              }
+              @include minSizeWH(700px, 0) {
+                &::after {
+                  background-color: $txtWhite;
+                }
+              }
+              @include minSizeWH(700px, 0) {
+                color: $txtWhite;
+              }
+            }
+          }
+          .certificate {
+            width: 300px;
+          }
+
+          @include minSizeWH(700px, 0) {
+            background: linear-gradient(
+              145deg,
+              $secondaryColor 0%,
+              $thirdColor 100%
+            );
+            margin: auto;
+            width: 100%;
+            border-radius: 25px;
+            padding-bottom: 5rem;
+            box-shadow: 0 10px 20px 0 $slightShadow;
+            p,
+            h2,
+            span,
+            a {
+              color: $txtWhite;
+            }
+            h2 {
+              font-weight: 500 !important;
+            }
+            .certificate {
+              display: none;
+            }
+          }
+          @include minSizeWH(900px, 0) {
+            box-shadow: 10px 0px 20px 0 $slightShadow;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            width: 90%;
+            padding: 4rem 2rem;
+          }
+          @include minSizeWH(1100px, 0) {
+            width: 70%;
+          }
+          @include minSizeWH(1300px, 0) {
+            .text {
+              max-width: 730px;
+              width: 100%;
+            }
+            display: flex;
+            justify-content: end;
+          }
+        }
+        .right {
+          display: none;
+          position: relative;
+          @include minSizeWH(700px, 0) {
+            display: flex;
+            .rightContainer {
+              margin: auto;
+              display: flex;
+              width: 100%;
+              height: 100%;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: end;
+              padding: 0 25px 25px;
+              position: relative;
+
+              .certificate {
+                width: 50%;
+              }
+              .logo {
+                position: relative;
+                // bottom: 2rem;
+                z-index: 1;
+              }
+            }
+          }
+          @include minSizeWH(900px, 0) {
+            width: 40%;
+            .rightContainer {
+              flex-direction: column;
+              margin: 0;
+              .certificate {
+                width: 100%;
+              }
+            }
+          }
+          @include minSizeWH(1100px, 0) {
+            .rightContainer {
+              .certificate {
+                width: 300px;
+              }
+            }
+          }
+          @include minSizeWH(1300px, 0) {
+            justify-content: start;
+            width: 50%;
+            .rightContainer {
+              max-width: 470px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .projecten {
+    background: $mainColor;
+    padding: 0 0;
+    margin-bottom: 100px;
+
+    .container {
+      max-width: 1300px;
+      padding: 2rem;
+      margin: auto;
+      .heading {
+        position: relative;
+        width: fit-content;
+        margin-bottom: 4rem;
+        .title {
+          margin-left: 2rem;
+          position: relative;
+          .graphic {
+            position: absolute;
+            left: -2rem;
+            bottom: 0.5rem;
+            width: 10px;
+            height: 80%;
+            background: $secondaryColor;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
+          h2 {
+            font-size: 30px;
+            font-weight: 600;
+            font-family: $regularFont;
+            @include minSizeWH(1000px, 600px) {
+              font-size: 45px;
+            }
+          }
+        }
+        p {
+          font-family: $secondFont;
+          font-size: 18px;
+          font-weight: 300;
+          margin: 2rem 0;
+        }
+      }
+      .cards {
+        display: grid;
+        gap: 1rem;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .card {
+          border-radius: 20px;
+          position: relative;
+          background: $mainColor;
+          box-shadow: 0 0px 20px 0 $slighterShadow;
+          width: 100%;
+          z-index: 1;
+          margin-bottom: 2rem;
+          &:hover .innerCard {
+            box-shadow: 0 5px 5px 0 $slightShadow;
+            scale: 1;
+          }
+
+          @include minSizeWH(680px, 0) {
+            width: 300px;
+          }
+
+          a {
+            text-decoration: none;
+          }
+          .innerCard {
+            height: 150px;
+            z-index: 2;
+            border-radius: 20px;
+            background: linear-gradient(
+              to top right,
+              $secondaryColor 0%,
+              $thirdColor 100%
+            );
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 5px 0 $slightShadow;
+            font-family: $regularFont;
+            transition: 0.4s;
+            box-shadow: 0 10px 10px 0 $slightShadow;
+            scale: 1.01;
+            cursor: auto;
+            &:hover {
+              box-shadow: 0 10px 10px 0 $slightShadow;
+              scale: 1.01;
+            }
+
+            h3 {
+              color: $txtWhite;
+              padding-bottom: 1rem;
+              font-size: 25px;
+              font-weight: 600;
+            }
+            span {
+              display: block;
+              width: 15%;
+              background: $lightBlue;
+              height: 3px;
+              margin: auto;
+              border-radius: 5px;
+            }
+          }
+          .bottom {
+            padding: 1rem;
+            position: relative;
+            text-align: center;
+            span {
+              color: $txtBlack;
+              font-family: $secondFont;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+  .contactFrankWrapper {
+    background: $mainColor;
+    margin-bottom: 100px;
+
+    .contactFrank {
+      position: relative;
+      height: 650px;
+      @include minSizeWH(700px, 0) {
+        height: 700px;
+      }
+      .svgs {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        .front {
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(45deg, $fourthColor, $fifthhColor);
+          position: absolute;
+          bottom: 0;
+        }
+        svg {
+          position: absolute;
+          bottom: -10px;
+          left: -2.5%;
+          width: 105%;
+          height: 100%; // 💥 this makes it fill the parent
+          max-height: 60px; // 💥 override the limit
+          fill: $mainColor;
+          z-index: 1;
+          rotate: 180deg;
+
+          @include minSizeWH(700px, 0) {
+            max-height: 120px;
+          }
+        }
+        .svg2 {
+          top: -10px;
+          rotate: 0deg;
+        }
+      }
+      .container {
+        position: relative;
+        z-index: 9;
+        display: grid;
+        justify-content: center;
+        padding: 0 2rem;
+        .photo {
+          margin: auto;
+          width: 180px;
+          height: 240px;
+          object-fit: cover;
+          border-radius: 30px;
+          margin-bottom: 1.5rem;
+          box-shadow: 0 30px 50px 0 $slightShadow;
+          @include minSizeWH(900px, 0) {
+            width: 250px;
+            height: 310px;
+            border-radius: 40px;
+          }
+        }
+        .graphic {
+          margin: auto;
+          width: 100px;
+          height: 3px;
+          background: $lightOrange;
+          border-radius: 5px;
+          box-shadow: 0px 8px 10px 1px $slightShadow;
+        }
+        .text {
+          margin-top: 1.5rem;
+          text-align: center;
+          color: $txtWhite;
+          .heading {
+            font-size: 23px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: $regularFont;
+            @include minSizeWH(500px, 0) {
+              font-size: 30px;
+            }
+          }
+          .phone {
+            font-family: $secondFont;
+          }
+          .LinkedIn {
+            font-size: 50px;
+            a {
+              color: $lightOrange;
+            }
+          }
+        }
+      }
+    }
+  }
+  .contactBedrijf {
+    padding: 0 0;
+    margin-bottom: 100px;
+
+    background: $mainColor;
+    .container {
+      max-width: 1300px;
+      position: relative;
+      margin: auto;
+      padding: 0 2rem;
+      @include minSizeWH(1330px, 0) {
+        padding: 0;
+      }
+      .heading {
+        position: relative;
+        width: fit-content;
+        margin-bottom: 4rem;
+        .title {
+          margin-left: 2rem;
+          position: relative;
+          .graphic {
+            position: absolute;
+            left: -2rem;
+            bottom: 0.5rem;
+            width: 10px;
+            height: 80%;
+            background: $fourthColor;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
+          h2 {
+            font-size: 30px;
+            font-weight: 600;
+            font-family: $regularFont;
+            @include minSizeWH(1000px, 600px) {
+              font-size: 45px;
+            }
+          }
+        }
+        p {
+          font-family: $secondFont;
+          font-size: 18px;
+          font-weight: 300;
+          margin: 2rem 0;
+        }
+      }
+      .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        @include minSizeWH(1050px, 0) {
+          flex-direction: row;
+        }
+        .info {
+          height: fit-content;
+          background: linear-gradient(
+            70deg,
+            $fourthColor 0%,
+            $fifthhColor 100%
+          );
+          width: 100%;
+          border-radius: 30px;
+          padding: 2rem 0rem;
+          box-shadow: 0 0px 20px 0 $slightShadow;
+          @include minSizeWH(700px, 0) {
+            padding: 2rem;
+          }
+          @include minSizeWH(1050px, 0) {
+            width: 60%;
+          }
+          @include minSizeWH(1330px, 0) {
+            width: 50%;
+            padding: 3rem;
+          }
+          .container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 3rem;
+
+            @include minSizeWH(600px, 0) {
+              grid-template-columns: repeat((2, 1fr));
+            }
+          }
+          .second {
+            width: 100%;
+          }
+          .item {
+            color: $txtWhite;
+            .icon {
+              color: $lightOrange;
+              font-size: 25px;
+            }
+            .title {
+              font-family: $regularFont;
+              font-weight: 500;
+              font-size: 20px;
+              margin-bottom: 0.5rem;
+            }
+            .contentSection {
+              font-family: $secondFont;
+              font-size: 16px;
+              font-weight: 300;
+            }
+          }
+        }
+      }
+      .map {
+        position: relative;
+        width: 100%;
+        margin-top: 50px;
+        @include minSizeWH(1050px, 0) {
+          width: 30%;
+          margin: 0;
+        }
+
+        iframe {
+          cursor: default;
+          // pointer-events: none;
+          @include minSizeWH(700px, 0) {
+            pointer-events: all;
+          }
+        }
+      }
+    }
+  }
+}

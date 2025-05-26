@@ -1,0 +1,84 @@
+@import "./global.scss";
+
+.wrapper {
+  .title {
+    height: 400px;
+    background: transparent;
+    .fixedImage {
+      img {
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100lvh;
+        z-index: -2;
+        object-fit: cover;
+      }
+    }
+  }
+  .containerWrapper {
+    background: #fff;
+    width: 100%;
+    .container {
+      background: #fff;
+      padding: 20px 0;
+      max-width: 1300px;
+      margin: auto;
+      position: relative;
+      padding-top: 200px;
+      .content {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding: 2rem 0;
+        gap: 2rem;
+        .backButton {
+          width: fit-content;
+          margin-left: 1rem;
+        }
+        p {
+          font-style: italic;
+          font-size: 20px;
+          font-family: $secondFont;
+          padding: 0.5rem;
+        }
+        @include minSizeWH(700px, 0) {
+          padding: 4rem;
+          width: 80%;
+          p {
+            padding: 0;
+          }
+        }
+        @include minSizeWH(1000px, 0) {
+          width: 60%;
+        }
+      }
+      @include minSizeWH(900px, 0) {
+        padding-top: 0;
+      }
+    }
+    .containerTrees {
+      background: #fff;
+      padding: 20px 0;
+      max-width: 1300px;
+      margin: auto;
+      position: relative;
+      .content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        padding: 2rem 0;
+        gap: 2rem;
+        .backButton {
+          width: fit-content;
+          margin-left: 1rem;
+        }
+
+        @include minSizeWH(700px, 0) {
+          padding: 4rem;
+        }
+      }
+    }
+  }
+}

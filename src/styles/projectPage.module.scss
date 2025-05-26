@@ -1,0 +1,62 @@
+@import "./global.scss";
+
+.main {
+  background: $mainColor;
+  padding-top: 200px;
+
+  .container {
+    max-width: 1300px;
+    padding: 2rem;
+    margin: auto;
+    .heading {
+      position: relative;
+      width: fit-content;
+      margin-bottom: 1.5rem;
+      position: relative;
+      .graphic {
+        // margin: auto;
+        width: 70%;
+        height: 3px;
+        background: $secondaryColor;
+        border-radius: 5px;
+      }
+      h1 {
+        text-transform: capitalize;
+        font-size: 23px;
+        font-weight: 600;
+        font-family: $regularFont;
+        margin-bottom: 1rem;
+      }
+    }
+    .backButton {
+      margin-bottom: 1.5rem;
+    }
+    .photos {
+      // display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      // grid-auto-rows: auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 1rem;
+      position: relative;
+      .photo {
+        display: flex;
+        flex: 1 1 100%;
+        border: solid 5px #e5e5e5;
+        box-shadow: 1px 5px 10px 1px $slightShadow;
+        @include minSizeWH(500px, 0) {
+          flex: 1 1 400px;
+          max-width: 400px;
+          // height: 300px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

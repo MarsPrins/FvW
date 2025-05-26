@@ -1,0 +1,83 @@
+@import "../global.scss";
+
+.button1 {
+  padding: 1rem;
+  font-size: 17px;
+  font-family: $secondFont;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background: $secondaryColor2;
+  color: $txtWhite;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.4s;
+  position: relative;
+  box-shadow: 0 5px 5px 0 $slighterShadow;
+
+  &:hover {
+    background: $thirdColor;
+  }
+}
+
+.button2 {
+  padding: 1rem;
+  font-size: 17px;
+  font-family: $secondFont;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: #307be6;
+  color: $txtWhite;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.4s;
+  opacity: 0.8;
+  box-shadow: 0 5px 5px 0 $slightShadow;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.fullRoute {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  .item {
+    display: flex;
+    flex-direction: row;
+    font-family: $secondFont;
+    font-size: 14px;
+    text-transform: capitalize;
+    a {
+      color: $txtBlack;
+      text-decoration: none;
+      transition: 0.4s;
+      display: inline-block;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: $txtBlack;
+        transition: transform 0.25s ease-out;
+        transform-origin: bottom left;
+      }
+      &:hover::after {
+        transform: scaleX(1);
+      }
+    }
+    .noLink {
+      // color: $secondaryColor;
+    }
+    .split {
+      padding: 0 0.5rem;
+    }
+  }
+}
