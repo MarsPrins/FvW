@@ -51,17 +51,17 @@ const Footer = () => {
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <a href={`/cv`}>Frank van Woesik CV</a>
+                  <Link to={"/pdf/cv"}>Frank van Woesik CV</Link>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <a href={`/algemeene-voorwaarden`}>Algemene voorwaarden</a>
+                  <Link to={"/pdf/algemeen"}>Algemene voorwaarden</Link>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <a href={`/Rechtsverhouding`}>Privacyverklaring</a>
+                  <Link to={"/pdf/privacy"}>Privacyverklaring</Link>
                 </li>
               </ul>
             </div>

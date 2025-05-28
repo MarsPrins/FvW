@@ -10,6 +10,9 @@ const Project = () => {
   const images = importAllImages(context);
   const route = [{ string: "Thuis", url: "/#projecten" }, { string: slug }];
 
+  console.log(context);
+  console.log(images);
+
   return (
     <div className={s.main}>
       <div className={s.container}>

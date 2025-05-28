@@ -17,6 +17,9 @@ const Main = () => {
       <Diensten teksten={teksten} />
       <Projecten teksten={teksten} />
       <Co2 teksten={teksten} />
+      <a href="/algemene-voorwaarden.html" target="_blank">
+        Test Link
+      </a>
       <Over teksten={teksten} />
       <CCfrank teksten={teksten} />
       <CCvwcon teksten={teksten} />

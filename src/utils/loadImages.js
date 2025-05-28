@@ -37,8 +37,15 @@ export const imageContexts = {
 };
 
 export function importAllImages(r) {
-  return r.keys().map((key) => ({
-    src: r(key),
-    name: key.replace("./", ""),
-  }));
+  return r.keys().map((key) => {
+    const src = r(key);
+
+    // src kan zijn: './static/media/foo.hash.png' OF '/static/media/foo.hash.png'
+    const absoluteSrc = "/" + src.replace(/^\.?\//, "");
+
+    return {
+      src: absoluteSrc,
+      name: key.replace("./", ""),
+    };
+  });
 }

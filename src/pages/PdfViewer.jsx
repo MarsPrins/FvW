@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 
 const PdfViewer = () => {
+  console.log("first");
   const [htmlContent, setHtmlContent] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -24,22 +25,28 @@ const PdfViewer = () => {
   const { slug } = useParams();
   const htmlFilePath =
     slug === "algemeen"
-      ? "/algemene-voorwaarden.html"
+      ? `/algemene-voorwaarden.html`
       : slug === "privacy"
-      ? "/Rechtsverhouding.html"
-      : slug === "cv" && "/cv.html";
+      ? `/Rechtsverhouding.html`
+      : slug === "cv"
+      ? `/cv.html`
+      : null;
+
+  console.log(process.env.PUBLIC_URL);
 
   useEffect(() => {
     // Fetch the HTML file content
+    console.log(htmlFilePath);
     fetch(htmlFilePath)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load HTML file");
         }
+        console.log(response);
         return response.text();
       })
       .then((html) => {
-        setHtmlContent(html + <div>credits</div>);
+        setHtmlContent(html);
         setLoading(false);
       })
       .catch((err) => {

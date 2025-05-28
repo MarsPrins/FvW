@@ -1,0 +1,6 @@
+# Redirects from what the browser requests to what we serve
+
+/cv.html /cv.html
+/algemene-voorwaarden.html /algemene-voorwaarden.html
+/rechtsverhouding.html /rechtsverhouding.html
+/\* /index.html

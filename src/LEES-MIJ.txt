@@ -1,1 +1,50 @@
-bekijk de pagina vanuit een praktisch pers. is de tekst logisch?
+build glitches
+
+...vanuit projecten slug = 200 maar refresh = 404
+    1. maak een .htaccess voor strato om altijd naar de index.html te gaan 
+        1.5 TESTEN
+    2. XXX lokaal serve -s 
+
+...pdf slugs werken uberhaupt niet
+    1. maak ipv a tag, Link
+    2. 
+
+...pdf documenten naar html van frank
+
+XXX...Lokaal build heeft geen fotos in projecten en favicon, wel in certificaat en disc
+
+XXX...Lokaal build geen css op refresh in tweede pagina
+
+...en html heeft gekke margi aan de onferkant
+
+...fotos kleiner maken voor sneller laden
+    1. zoek uit hoe groot fotos zijn en of dat significant verschil maakt
+    om te veranderen
+    2. zo wel, gewoon bulk foto compressor en resizer, maybs zelfs verschillende groottes, check chadgpt of dat makkelijke kan in de src url met imports
+    3. zo niet, vinnd andere fix
+
+...op mobiel rechts stukje wit
+    1. check of alleen build is, lokaal is en dan stukken weghalen om te zien welke t is
+
+...check ook of die webkit dependencie werkt voor browser compatabilitie
+    1. kijk in de build css inspect element
+
+...Teksten.json in public folder en fetch met currUrl
+    1. json in public
+    2. bestanden met json tekst import : 
+        3. pak de currUrl uit los bestand script
+        4. goooi fetch met !text = loading
+        5. doe dit in ./App voor taal compatabilitie
+        6. geef tekst.json mee in prop
+
+...Engels
+    1. fetch tekstenEngesl.json
+    2. /en/ gooi routes naar normale shit maar met tekstenEngesl.json prop en "engels" prop
+    3. in pagina components, non dynamische tekst, kleine if statement voor engels of niet
+    4. stel Seo.js in
+    5. engels knopjes
+    6. footer if statement 
+
+...ESLint waarschuwingen fixen
+
+...voeg een uppdate log toe zodat ik weet wanner ik weer ff npm update
