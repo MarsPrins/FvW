@@ -59,6 +59,8 @@ XXX...documenten
 
 XXX... laad icoon
 
+... certificaat sneller laden
+
 ... uitleg om fotos aan te passen
 
 XXX... fotos laad

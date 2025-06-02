@@ -49,7 +49,7 @@ function App() {
       <div
         style={{
           width: "100%",
-          height: "90vh",
+          height: "auto",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -60,8 +60,8 @@ function App() {
         <svg
           id="animated-svg"
           xmlns="http://www.w3.org/2000/svg"
-          width="200"
-          height="200"
+          width="100"
+          height="100"
           viewBox="0 0 379 451"
           fill="none"
           style={{
@@ -69,6 +69,7 @@ function App() {
             boxShadow: "0 0 40px 0 #00000047",
             borderRadius: "50%",
             transition: "0.2s ease",
+            marginTop: "100px",
           }}
         >
           <path
