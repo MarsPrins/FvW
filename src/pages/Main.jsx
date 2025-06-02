@@ -1,6 +1,5 @@
 import { React, useState, useRef, useEffect } from "react";
 import s from "../styles/main.module.scss";
-import teksten from "../teksten.json";
 
 import Landing from "../components/main/Landing";
 import Diensten from "../components/main/Diensten";
@@ -10,19 +9,18 @@ import Projecten from "../components/main/Projecten";
 import CCfrank from "../components/main/CCfrank";
 import CCvwcon from "../components/main/CCvwcon";
 
-const Main = () => {
+const Main = (props) => {
+  const teksten = props.teksten;
+  console.log(props);
   return (
     <div className={s.main}>
-      <Landing teksten={teksten} />
-      <Diensten teksten={teksten} />
-      <Projecten teksten={teksten} />
-      <Co2 teksten={teksten} />
-      <a href="/algemene-voorwaarden.html" target="_blank">
-        Test Link
-      </a>
-      <Over teksten={teksten} />
-      <CCfrank teksten={teksten} />
-      <CCvwcon teksten={teksten} />
+      <Landing engels={props.english} teksten={teksten} />
+      <Diensten engels={props.english} teksten={teksten} />
+      <Projecten engels={props.english} teksten={teksten} />
+      <Co2 engels={props.english} teksten={teksten} />
+      <Over engels={props.english} teksten={teksten} />
+      <CCfrank engels={props.english} teksten={teksten} />
+      <CCvwcon engels={props.english} teksten={teksten} />
     </div>
   );
 };

@@ -7,8 +7,13 @@ import Button from "../components/Button";
 // ff heading en bedenk iets anders met die boom foto
 // klein textje kan er wel bij, die van de homepagina
 
-const Trees4all = () => {
-  const route = [{ string: "Thuis", url: "/" }, { string: "Certificaat" }];
+const Trees4all = (props) => {
+  const en = props.english;
+
+  const route = [
+    { string: en ? "Home" : "Thuis", url: en ? "/en/" : "/" },
+    { string: en ? "Certificate" : "Certificaat" },
+  ];
   return (
     <div className={s.wrapper}>
       <div className={s.title}>

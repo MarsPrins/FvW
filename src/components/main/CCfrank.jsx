@@ -44,7 +44,7 @@ const CCfrank = (props) => {
             <span className={s.heading}>{frank.titel}</span>
             <br />
             <span className={s.phone}>
-              Neem contact op met:
+              {frank["sub-titel"]}
               <br />
               {frank.naam}
               <br />

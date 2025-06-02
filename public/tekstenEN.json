@@ -1,0 +1,131 @@
+﻿{
+  "landing": {
+    "titel": "Van Woesik Consult B.V.",
+    "beschrijving": {
+      "mobiel": "Construction, Structural-, civil engineering and infrastructure. Your partner to make your projects successful",
+      "desktop": "Your partner to make your projects successful"
+    },
+    "sub-titel": "Construction, Structural-, civil engineering and infrastructure.",
+    "knop": "Contact us"
+  },
+  "diensten": {
+    "titel": "Our Services",
+    "beschrijving": {
+      "andere": "van Woesik consult is a consultancy firm that specializes in technical-, project- and liaison management in the disciplines of Construction, Structural- and Civil Engineering and Infrastructure. Our expertise enables us to make projects a success in design and execution. ",
+      "desktop": "Our expertise enables us to make projects successful in design and construction. More about our specialties is listed below below"
+    },
+    "vakgebieden": [
+      "Construction",
+      "Structural engineering",
+      "Civil Engineering",
+      "Infrastructure"
+    ],
+
+    "kop1": {
+      "titel": "Project Management",
+      "beschrijving": "van Woesik consult B.V. offers professional project management to successfully complete your projects within agreed milestones and budget. The project management of construction projects requires not only technical knowledge, but also strong organizational skills, foresight and a good ability to communicate with different parties."
+    },
+    "kop2": {
+      "titel": "Technical Management",
+      "beschrijving": "The technical management of construction projects is a complex and dynamic task, in which knowledge of technology, planning and organization is essential. van Woesik consult B.V. has extensive experience with the technical elaboration of your construction project, using system engineering and LEAN and can advise you on this."
+    },
+    "kop3": {
+      "titel": "Liaison Management",
+      "beschrijving": "van Woesik consult B.V. has extensive experience with liaison management, in which solving problems and mediating between conflicts is central. van Woesik consult is the connecting link that weighs up and coordinates all the different interests. In doing so, we ensure that all parties, from the client to the local authorities and the construction teams, are on the same page again. The goal is that everyone is heard and that support is found for each other's interests in order for the construction project to be successful (again)."
+    },
+    "kop4": {
+      "titel": "Advice",
+      "beschrijving": "Van Woesik consult advises within the broadest sense of the word. Secured with considerable structural, architectural and civil knowledge, gained in all kinds of small and large projects within various design phases and especially different sectors. Feel free to contact me if you get stuck with your design or design team. I would like to meet you."
+    }
+  },
+  "over-frank": {
+    "titel": {
+      "titel": "About Frank van Woesik"
+    },
+    "deel1": {
+      "jaartal": "2003 - 2013",
+      "beschrijving": {
+        "sectie1": "Frank van Woesik obtained his degree in architecture in 2003 at the Windesheim University of Applied Sciences in Zwolle with a specialization in construction technique.",
+        "sectie2": "After that, Frank van Woesik started as a structural engineer at engineering firm Aafjes and there he mainly focused on designing foundations for buildings.",
+        "sectie3": "At engineering firm Aafjes, Frank followed the 2-year all-round structural engineer course at the Amsterdam University of Applied Sciences and successfully obtained his diploma in 2005.",
+        "sectie4": "",
+        "sectie5": "In 2006, Frank made the switch to Witteveen+Bos and worked there as a structural engineer on larger non-residential construction projects. Through Witteveen+Bos, Frank came into contact with drinking water and civil engineering projects. In 2010, Frank successfully completed the BV training for concrete constructor. In 2011, Frank and his family lived and worked in Indonesia for 2 years as group head of construction technology at the Witteveen+Bos office in Jakarta."
+      }
+    },
+    "deel2": {
+      "jaartal": "2013 - 2023",
+      "beschrijving": {
+        "sectie1": "In Indonesia, Frank has worked as a design leader on various civil projects, including the design of the water management plan for an artificial island of 200ha, a large water inlet station with a deep pumping station and a concept study for a bridge over the pu laut of 5km.",
+        "sectie2": "After Indonesia, Frank worked on a large civil project in Kazakhstan for another 2.5 years. The Cargo Transportation Route (CATRO). Frank's main task was to help the design teams of the various engineering firms move forward in order to meet the planning and design milestones of the mega project. After Witteveen+Bos, Frank chose to be closer to his family again and made the switch to Sweco in Zwolle.",
+        "sectie3": "At Sweco, Frank has worked as a project manager, technical manager and design leader on various projects within the disciplines of drinking water, energy, rail, utility construction, underground and above-ground parking garages and infrastructure. At Sweco, frank successfully completed the professional project management (PPM) course at ‘de Baak’."
+      }
+    },
+    "deel3": {
+      "jaartal": "2023 - present",
+      "beschrijving": {
+        "sectie1": "Frank has always wanted to take the step to start his own business, so he could be hired on a temporary base for projects. Customers can use his knowledge for a certain period of time. Van Woesik consult started on January 1, 2024 and van Woesik consult B.V. has started at Aril 1, 2025. Van Woesik consult B.V. is currently hired by contractor combination TM ROCO to work on the Oosterweel connection in Antwerp and regularly collaborates with artist Ronald Westerhuis. Other clients are the Municipality of The Hague and the Municipality of Amsterdam."
+      }
+    }
+  },
+  "co2-compensatie": {
+    "titel": {
+      "titel": "CO2 compensation",
+      "sub-titel": "emissions produced"
+    },
+    "beschrijving": "Trees play a crucial role in combating climate change and the loss of biodiversity. Moreover, without trees there is no life. Trees for All is committed to a forested world every day. They plant new forest, restore existing forest and make people aware of the importance of trees. In this way, work is being done on a better climate, more biodiversity and healthy living conditions for everyone. van Woesik consult B.V. has joined Trees for All to fully compensate the company's annual CO2 production.",
+    "knop": "Open certificate"
+  },
+  "projecten": {
+    "titel": "Projects",
+    "beschrijving": "Below is a list of previous projects presented in photos"
+  },
+  "contact-frank": {
+    "titel": "Curious what Woesik Consult B.V. can do for you?",
+    "sub-titel": "Get in contact with:",
+    "naam": "Ing. Frank van Woesik MSEng",
+    "telefoon": "+31 (6) 15 16 13 95",
+    "linkedIn-link": "https://www.linkedin.com/in/frankvanwoesik/"
+  },
+  "contact-vwcon": {
+    "titel": "Contact us",
+    "beschrijving": "Send us a message with your question and we will get back to you as soon as possible to discuss the possibilities",
+    "blokken": {
+      "deel1": {
+        "titel": "E-mail",
+        "inhoud": ["info@vwcon.nl"]
+      },
+      "deel2": {
+        "titel": "Phone",
+        "inhoud": ["+31 (6) 15 16 13 95", "(Mon to Fri 9:00-17:00)"]
+      },
+      "deel3": {
+        "titel": "van Woesik Consult B.V.",
+        "inhoud": [
+          "Chamber of Commerce: 97007668",
+          "VAT: NL 867871751B01",
+          "Leliestraat 95, 8012 BN Zwolle"
+        ]
+      },
+      "deel4": {}
+    },
+    "map-embed-url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3257.1631384367197!2d6.106953212955469!3d52.50371917194041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f895!3m3!1m2!1s0x47c7df1fcafeacc7%3A0xae402bbdb7772eab!2sLeliestraat%2095%2C%208012%20BN%20Zwolle%2C%20Netherlands!5e0!3m2!1sen!2spt!4v1747674805766!5m2!1sen!2spt"
+  },
+  "disc": "You have a strong self-motivation to set and achieve goals. You are persuasive, people-oriented and determined. You handle pressure well; Opposition or criticism will not demotivate you quickly. You are able to do repetitive routine work for a longer period of time, but you usually get bored of it. You can become quite impatient or frustrated with people who have less self-motivation and dynamism than you. But your optimism and enthusiasm for making contact with people counterbalances this. As a result, you can deal and work with many different people.",
+  "footer": {
+    "lijst1": {
+      "titel": "Homepage",
+      "deel1": "Home",
+      "deel2": "Services",
+      "deel3": "Projects",
+      "deel4": "Co2 compensation",
+      "deel5": "About us",
+      "deel6": "Contact"
+    },
+    "lijst2": {
+      "titel": "Documents",
+      "deel1": "Frank van Woesik CV",
+      "deel2": "Terms & conditions",
+      "deel3": "Privacy Policy"
+    }
+  }
+}

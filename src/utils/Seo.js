@@ -46,7 +46,7 @@ export default function Seo() {
             Constructies,
             Infrastructuur"
           />
-          <title>Adviesbureau voor projectsuccess | van Woesik Consult</title>
+          <title>Adviesbureau voor projectsucces | van Woesik Consult</title>
         </Helmet>
       ) : (
         isEnglishPage && (

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import s from "../../styles/main.module.scss";
 import Button from "../Button";
-import SvgGraphic1 from "../../images/Projections-pana.svg";
-import SvgGraphic2 from "../../images/Construction crane-bro (1).svg";
-import SvgGraphic3 from "../../images/Business deal-pana.png";
-import SvgGraphic4 from "../../images/Consultative sales-bro.svg";
+import SvgGraphic1 from "../../images/psd-board.svg";
+import SvgGraphic2 from "../../images/psd-crane.svg";
+import SvgGraphic3 from "../../images/psd-men-deal.png";
+import SvgGraphic4 from "../../images/psd-desk-conversation.svg";
 
 const Diensten = (props) => {
   const teksten = props.teksten;
+  const en = props.engels;
   const [isOpen11, setOpen11] = useState(false);
   const [isOpen12, setOpen12] = useState(false);
   const [isOpen13, setOpen13] = useState(false);
@@ -24,7 +25,11 @@ const Diensten = (props) => {
             <span className={s.regularHeading}>Disciplines</span>
           </div>
           <div className={s.content}>
-            <div className={s.listHeading}>Woesik consult is ervaren in:</div>
+            <div className={s.listHeading}>
+              {en
+                ? "Woesik consult is experienced in:"
+                : "Woesik consult is ervaren in:"}
+            </div>
             <ul>
               {teksten.diensten.vakgebieden.map((item, i) => {
                 return <li key={item}>{item}</li>;
@@ -73,7 +78,13 @@ const Diensten = (props) => {
                 }}
                 className={s.leesMeer}
               >
-                {!clamp11 ? "Lees minder…" : "Lees meer…"}
+                {!clamp11
+                  ? en
+                    ? "Read less…"
+                    : "Lees minder…"
+                  : en
+                  ? "Read more…"
+                  : "Lees meer…"}
               </div>
             </div>
             <div className={s.graphicSide}>
@@ -115,7 +126,13 @@ const Diensten = (props) => {
                 }}
                 className={s.leesMeer}
               >
-                {!clamp12 ? "Lees minder…" : "Lees meer…"}
+                {!clamp12
+                  ? en
+                    ? "Read less…"
+                    : "Lees minder…"
+                  : en
+                  ? "Read more…"
+                  : "Lees meer…"}
               </div>
             </div>
             <div className={s.graphicSide}>
@@ -146,7 +163,13 @@ const Diensten = (props) => {
                 }}
                 className={s.leesMeer}
               >
-                {!clamp13 ? "Lees minder…" : "Lees meer…"}
+                {!clamp13
+                  ? en
+                    ? "Read less…"
+                    : "Lees minder…"
+                  : en
+                  ? "Read more…"
+                  : "Lees meer…"}
               </div>
             </div>
             <div className={s.graphicSide}>
@@ -187,7 +210,13 @@ const Diensten = (props) => {
                 }}
                 className={s.leesMeer}
               >
-                {!clamp14 ? "Lees minder…" : "Lees meer…"}
+                {!clamp14
+                  ? en
+                    ? "Read less…"
+                    : "Lees minder…"
+                  : en
+                  ? "Read more…"
+                  : "Lees meer…"}
               </div>
             </div>
             <div className={s.graphicSide}>

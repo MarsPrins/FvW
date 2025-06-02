@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import s from "../styles/projectPage.module.scss";
 import { imageContexts, importAllImages } from "../utils/loadImages";
 import Button from "../components/Button";
+import ImageComponent from "../components/ImageComponent";
 
-const Project = () => {
+const Project = (props) => {
+  const en = props.english;
   const { slug } = useParams();
   const context = imageContexts[slug];
   const images = importAllImages(context);
-  const route = [{ string: "Thuis", url: "/#projecten" }, { string: slug }];
-
-  console.log(context);
-  console.log(images);
+  const route = [
+    {
+      string: en ? "Home" : "Thuis",
+      url: en ? "/en/#projecten" : "/#projecten",
+    },
+    { string: slug },
+  ];
 
   return (
     <div className={s.main}>
@@ -27,7 +32,7 @@ const Project = () => {
           {images.map((img, i) => {
             return (
               <div key={img} className={s.photo}>
-                <img src={img.src} alt="" />
+                <ImageComponent src={img.src} />
               </div>
             );
           })}

@@ -8,6 +8,7 @@ const Over = (props) => {
   const [clamp1, setClamp1] = useState(true);
   const [clamp2, setClamp2] = useState(true);
   const teksten = props.teksten;
+  const en = props.engels;
   const overFrank = teksten["over-frank"];
 
   return (
@@ -16,16 +17,8 @@ const Over = (props) => {
         <div className={s.heading}>
           <div className={s.title}>
             <div className={s.graphic}></div>
-            <h2 className={s.desktop}>
-              {overFrank.titel.andere["andere-titel"]}
-            </h2>
-            <h2 className={s.mobile}>
-              {overFrank.titel.mobiel["mobiel-titel"]}
-            </h2>
+            <h2>{overFrank.titel["titel"]}</h2>
           </div>
-          <span className={s.mobile}>
-            "{overFrank.titel.mobiel["sub-titel"]}"
-          </span>
         </div>
 
         <div className={s.texts}>
@@ -62,7 +55,13 @@ const Over = (props) => {
                 }}
                 className={s.leesMeer}
               >
-                {!clamp1 ? "Lees minder…" : "Lees meer…"}
+                {!clamp1
+                  ? en
+                    ? "Read less…"
+                    : "Lees minder…"
+                  : en
+                  ? "Read more…"
+                  : "Lees meer…"}
               </div>
             </div>
             <div className={s.part2}>
@@ -93,7 +92,13 @@ const Over = (props) => {
                 }}
                 className={s.leesMeer}
               >
-                {!clamp2 ? "Lees minder…" : "Lees meer…"}
+                {!clamp2
+                  ? en
+                    ? "Read less…"
+                    : "Lees minder…"
+                  : en
+                  ? "Read more…"
+                  : "Lees meer…"}
               </div>
             </div>
           </div>
@@ -111,8 +116,10 @@ const Over = (props) => {
                 {overFrank.deel3.beschrijving.sectie1}
                 <br />
                 <span>
-                  Frank zijn karakter is weergegeven in het volgende{" "}
-                  <Link to={"/disc"}>DISC profiel</Link>
+                  {en
+                    ? "The character of Frank is depicted in the following"
+                    : "Frank zijn karakter is weergegeven in het volgende"}{" "}
+                  <Link to={"disc"}>DISC {en ? "profile" : "profiel"}</Link>
                 </span>
               </p>
               {/* <div
@@ -127,7 +134,7 @@ const Over = (props) => {
                   }}
                   className={`${s.leesMeer} ${s.leesMeer3}`}
                 >
-                  {!clamp3 ? "Lees minder…" : "Lees meer…"}
+                  {!clamp3 ? en ? "Read less…" : "Lees minder…" : en ? "Read more…" : "Lees meer…"}
                 </div> */}
             </div>
           </div>

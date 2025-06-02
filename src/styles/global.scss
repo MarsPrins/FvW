@@ -13,8 +13,8 @@ $slighterShadow: #00000029;
 $txtBlack: #333;
 $txtWhite: #ffff;
 $grey05: #dbdbdb8e;
-$regularFont: "Poppins";
-$secondFont: "Poppins";
+$regularFont: "Poppins", sans-serif;
+$secondFont: "Poppins", sans-serif;
 
 @font-face {
   font-family: "Poppins"; /* This is the name you'll use to reference the font */
@@ -188,7 +188,7 @@ body {
   font-family: "Roboto", Helvetica, Arial, Lucida, sans-serif;
   background: $mainColor;
   width: 100vw;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 ::-webkit-scrollbar {
   display: none;

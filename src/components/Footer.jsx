@@ -1,14 +1,19 @@
 import React from "react";
 import s from "../styles/components/footer.module.scss";
-import logo from "../images/logo.svg";
+import logo from "../images/logo.png";
 import berg from "../images/berg.jpg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 // logo overmaken in figma naar svg
-const Footer = () => {
+const Footer = (props) => {
   const currYear = new Date().getFullYear();
+  const location = useLocation();
+  const isEnglishPage = location.pathname.startsWith("/en");
+  const teksten = isEnglishPage
+    ? props.tekstenEN.footer
+    : props.tekstenNL.footer;
 
   return (
     <div className={s.wrapper}>
@@ -16,52 +21,62 @@ const Footer = () => {
         <div className={s.container}>
           <div className={s.links}>
             <div className={s.linkPart}>
-              <span className={s.header}>Pagina</span>
+              <span className={s.header}>{teksten.lijst1.titel}</span>
               <ul>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
-                  <Link to={"/"}> Thuis</Link>
+                  <Link to={"/"}> {teksten.lijst1.deel1}</Link>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
-                  <a href={"/#diensten"}>Diensten</a>
+                  <a href={"/#diensten"}>{teksten.lijst1.deel2}</a>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
-                  <a href={"/#projecten"}>Projecten</a>
+                  <a href={"/#projecten"}>{teksten.lijst1.deel3}</a>
                 </li>
                 <li>
                   {/* andere naam? */}
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
-                  <a href={"/#co2-compensatie"}>Co2 compensatie</a>
+                  <a href={"/#co2-compensatie"}>{teksten.lijst1.deel4}</a>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
-                  <a href={"/#over-frank-van-woesik"}>Over ons</a>
+                  <a href={"/#over-frank-van-woesik"}>{teksten.lijst1.deel5}</a>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
-                  <a href={"/#contact"}>Contact</a>
+                  <a href={"/#contact"}>{teksten.lijst1.deel6}</a>
                 </li>
               </ul>
             </div>
             <div className={s.linkPart}>
-              <span className={s.header}>Documenten</span>
+              <span className={s.header}>{teksten.lijst2.titel}</span>
               <ul>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <Link to={"/pdf/cv"}>Frank van Woesik CV</Link>
+                  <Link to={isEnglishPage ? "/en/pdf/cv-EN" : "/pdf/cv"}>
+                    {teksten.lijst2.deel1}
+                  </Link>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <Link to={"/pdf/algemeen"}>Algemene voorwaarden</Link>
+                  <Link
+                    to={
+                      isEnglishPage
+                        ? "/en/pdf/terms-conditions"
+                        : "/pdf/algemeen"
+                    }
+                  >
+                    {teksten.lijst2.deel2}
+                  </Link>
                 </li>
                 <li>
                   <FontAwesomeIcon className={s.icon} icon={faCircle} />
 
-                  <Link to={"/pdf/privacy"}>Privacyverklaring</Link>
+                  <Link to={"/pdf/privacy"}>{teksten.lijst2.deel3}</Link>
                 </li>
               </ul>
             </div>
@@ -74,8 +89,8 @@ const Footer = () => {
           </div>
         </div>
         <div className={s.copyright}>
-          Copyright © 2025-{currYear} van Woesik Consult B.V. - Alle rechten
-          voorbehouden
+          Copyright © 2010-{currYear} van Woesik Consult B.V. -{" "}
+          {isEnglishPage ? "ALl rights reserved" : "Alle rechten voorbehouden"}
         </div>
       </div>
     </div>

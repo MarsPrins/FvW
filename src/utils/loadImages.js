@@ -34,6 +34,41 @@ export const imageContexts = {
     false,
     /\.(png|jpe?g|svg)$/
   ),
+  "civiel 1": require.context(
+    "../images/project-fotos/civiel",
+    false,
+    /\.(png|jpe?g|svg)$/
+  ),
+  "drinking water": require.context(
+    "../images/project-fotos/drinkwater",
+    false,
+    /\.(png|jpe?g|svg)$/
+  ),
+  energy: require.context(
+    "../images/project-fotos/energie",
+    false,
+    /\.(png|jpe?g|svg)$/
+  ),
+  infra: require.context(
+    "../images/project-fotos/infra",
+    false,
+    /\.(png|jpe?g|svg)$/
+  ),
+  "parking garages": require.context(
+    "../images/project-fotos/parkeergarages",
+    false,
+    /\.(png|jpe?g|svg)$/
+  ),
+  specials: require.context(
+    "../images/project-fotos/specials",
+    false,
+    /\.(png|jpe?g|svg)$/
+  ),
+  "civil 2": require.context(
+    "../images/project-fotos/utiliteitsbouw",
+    false,
+    /\.(png|jpe?g|svg)$/
+  ),
 };
 
 export function importAllImages(r) {

@@ -5,6 +5,7 @@ import Button from "../Button";
 import Trees4all from "../../images/trees4all.svg";
 
 const Co2 = (props) => {
+  const en = props.engels;
   const teksten = props.teksten;
   const co2 = teksten["co2-compensatie"];
   const [isOpen, setOpen] = useState(false);
@@ -59,7 +60,7 @@ const Co2 = (props) => {
               </div>
             </div>
             <div className={s.certificate}>
-              <Link to={"/certificaat"}>
+              <Link to={en ? "/en/certificate" : "/certificaat"}>
                 <Button button="regular" content={co2.knop} />
               </Link>
             </div>
@@ -73,7 +74,7 @@ const Co2 = (props) => {
                 <img src={Trees4all} alt="" />
               </div>
               <div className={s.certificate}>
-                <Link to={"/certificaat"}>
+                <Link to={en ? "/en/certificate" : "/certificaat"}>
                   <Button button="regular" content={co2.knop} />
                 </Link>
               </div>

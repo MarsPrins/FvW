@@ -17,14 +17,22 @@
     position: relative;
 
     img {
-      position: absolute;
       top: 50px;
-      background: #ffff;
-      border-radius: 50%;
-      padding: 1rem;
+      box-shadow: 0 10px 15px $slighterShadow;
       width: 100px;
       height: 100px;
-      box-shadow: 0 10px 15px $slighterShadow;
+      position: absolute;
+      border-radius: 50%;
+      padding: 1rem;
+      background: #ffff;
+    }
+    .homePage {
+      height: 100px;
+      width: 100px;
+      @include minSizeWH(500px, 0) {
+        width: 150px;
+        height: 150px;
+      }
     }
   }
 }

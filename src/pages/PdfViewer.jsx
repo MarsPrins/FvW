@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import s from "../styles/pdfViewer.module.scss";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { useState } from "react";
 
 const PdfViewer = () => {
@@ -9,6 +9,8 @@ const PdfViewer = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [browser, setBrowser] = useState("other");
+  const location = useLocation();
+  const isEnglishPage = location.pathname.startsWith("/en");
 
   useEffect(() => {
     const ua = navigator.userAgent.toLowerCase();
@@ -25,11 +27,15 @@ const PdfViewer = () => {
   const { slug } = useParams();
   const htmlFilePath =
     slug === "algemeen"
-      ? `/algemene-voorwaarden.html`
+      ? `/algemene-voorwaarden.txt`
       : slug === "privacy"
-      ? `/Rechtsverhouding.html`
+      ? `/Rechtsverhouding.txt`
       : slug === "cv"
-      ? `/cv.html`
+      ? `/cv.txt`
+      : slug === "terms-conditions"
+      ? `/terms-conditions.txt`
+      : slug === "cv-EN"
+      ? `/cv.txt`
       : null;
 
   console.log(process.env.PUBLIC_URL);
@@ -63,13 +69,18 @@ const PdfViewer = () => {
         {loading && (
           <div className={s.loadingText}>
             <div className={s.spinner}></div>
-            <p>Laden...</p>
+            <p>{isEnglishPage ? "Loading…" : "Laden…"}</p>
           </div>
         )}
 
         {error && (
           <div className={s.errorText}>
-            <p>Er is iets mis gegaan, graag opnieuw proberen.</p>
+            <p>
+              {" "}
+              {isEnglishPage
+                ? "Something went wrong, please try again"
+                : "Er is iets mis gegaan, graag opnieuw proberen."}
+            </p>
           </div>
         )}
 

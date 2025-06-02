@@ -1,15 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Seo from "./utils/Seo";
 
-function Layout() {
+function Layout(props) {
   return (
     <>
       <Seo />
       <Header />
       <Outlet />
-      <Footer />
+      <Footer tekstenNL={props.tekstenNL} tekstenEN={props.tekstenEN} />
     </>
   );
 }

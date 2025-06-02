@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Projecten = (props) => {
   const teksten = props.teksten;
+  const en = props.engels;
   const projectArray = [
     "civiel",
     "drinkwater",
@@ -13,6 +14,17 @@ const Projecten = (props) => {
     "parkeergarages",
     "specials",
   ];
+  const projectArrayEN = [
+    "civil 1",
+    "drinking water",
+    "energy",
+    "infra",
+    "civil 2",
+    "parking garages",
+    "specials",
+  ];
+
+  const array = en ? projectArrayEN : projectArray;
   return (
     <div className={s.projecten} id="projecten">
       <div className={s.container}>
@@ -24,10 +36,10 @@ const Projecten = (props) => {
           <p>{teksten.projecten.beschrijving}</p>
         </div>
         <div className={s.cards}>
-          {projectArray.map((proj, i) => {
+          {array.map((proj, i) => {
             return (
               <div key={proj} className={s.card}>
-                <Link to={"/project/" + proj}>
+                <Link to={en ? "/en" + "/project/" + proj : "/project/" + proj}>
                   <div className={s.innerCard}>
                     <h3>{proj}</h3>
                     <span className={s.graphic}></span>
